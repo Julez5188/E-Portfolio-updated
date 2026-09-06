@@ -3,11 +3,11 @@
 
  function moveBackground(event) {
   const shapes = document.querySelectorAll(".shape");
-  const x = event.clientX;
-  const y = event.clientY;
+  const x = event.clientX / 20;
+  const y = event.clientY / 20;
   
   for (let i = 0; i < shapes.length; ++i) {
-    shapes[i].style.transform = translate(${x}px, ${y}px);
+    shapes[i].style.transform = 'translate(${x}px, ${y}px)'
   }
  }
  
@@ -36,7 +36,7 @@
       loading.classList.remove("modal__overlay--visible");
       success.classList += " modal__overlay--visible";
     }).catch(() => {
-      loading.classList.remove("modal__0verlay--visible");
+      loading.classList.remove("modal__overlay--visible");
       alert(
         "The email service is temperarily unavailable. Please contact me directly at julia.maximov18@gmail.com"
       );
